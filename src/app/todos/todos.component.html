@@ -1,0 +1,45 @@
+    <nav>
+        <div class="nav-wrapper">
+            <ul id="nav-mobile" class="left">
+            <li><a href="/">To Do</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+
+   <h1>To Do</h1>
+    <p>Add a thing to do:</p>
+
+    <!-- Allow the user to submit a new to do item -->
+    <form class="add_item" action="/api/item" method="POST">
+      <input type="text" placeholder="Buy Eggs..." name="todo">
+      <button class="btn" type="submit">Submit</button>
+    </form>
+
+    <h4 class="things-to-do">Your things to do:</h4>
+
+    <!-- Loop through all the to do results from the server and display them -->
+    <ul class="todos">
+        <li class="item" *ngFor="let todo of todos">
+          <form class="todo" id="{{todo._id}}" action="/api/edit/{{todo._id}}" method="POST">
+              <input type="text" value="{{todo.todo}}" name="todo">
+              <button class="btn" type="submit">Edit</button>
+          </form>
+
+          <form class="delete" action="/api/delete/{{todo._id}}" method="POST">
+              <button class="btn btn-danger" type="submit">Delete</button>
+          </form>
+          
+        </li>
+
+      <!-- Empty state -->
+      <div class="item" ng-if="todos.length == 0">
+          <h5>It looks like you have nothing to do.</h5>
+          <p>Get started by adding something from above</p>
+      </div>
+  </ul>
+
+<footer>
+    &copy; Jonathan Marcello 2018 | comp2068
+</footer>
+    

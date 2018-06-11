@@ -1,0 +1,39 @@
+.add_item {
+    padding: 20px 0;
+  }
+  
+  .delete {
+    float: right;
+    position: relative;
+    top: 5px;
+    padding-left: 20px;
+  }
+  
+  .btn-danger:hover {
+    background-color: #d9534f;
+  }
+  
+  .things-to-do {
+    margin-top: 40px;
+  }
+  
+  .showhide {
+    display: block;
+  }
+  
+  .btn-danger {
+    background-color: #c82333;
+  }
+  
+  .item {
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .todo {
+    margin-bottom: 10px;
+    width: 100%;
+  }
